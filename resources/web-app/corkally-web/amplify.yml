@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - echo "REACT_APP_REGION=$REGION" >> .env
+        - echo "REACT_APP_IDENTITY_POOL_ID=$IDENTITY_POOL_ID" >> .env
+        - echo "REACT_APP_USER_POOL_ID=$USER_POOL_ID" >> .env
+        - echo "REACT_APP_USER_POOL_WEB_CLIENT_ID=$USER_POOL_WEB_CLIENT_ID" >> .env
+        - echo "Printing environmental variables to the console to ensure they are correct"
+        - cat .env
+        - npm run build
+        - echo "Success!"
+  artifacts:
+    baseDirectory: build
+    files:
+      - "**/*"

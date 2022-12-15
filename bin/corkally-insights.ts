@@ -4,6 +4,7 @@ import * as cdk from "aws-cdk-lib";
 import { Aspects } from "aws-cdk-lib";
 import { WebStack } from "../lib/stacks/stack-web/stack-web";
 import { SharedResourcesStack } from "../lib/stacks/stack-shared-resources/stack-shared-resources";
+import { Node } from "constructs";
 
 const app = new cdk.App();
 
@@ -32,6 +33,8 @@ if (webOption === true) {
     env: appEnv,
     adminEmail: app.node.tryGetContext("adminEmail"),
     cognito: cognito,
+    quicksightAccountId: app.node.tryGetContext("quicksightAccountId"),
+    quicksightDashboard: app.node.tryGetContext("quicksightDashboard"),
   });
 }
 

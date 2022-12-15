@@ -10,6 +10,8 @@ import { CognitoAuth } from "../../constructs/construct-cognito-auth/construct-c
 interface WebStackProps extends cdk.StackProps {
   adminEmail: string;
   cognito: CognitoAuth;
+  quicksightAccountId: string;
+  quicksightDashboard: string;
 }
 
 export class WebStack extends cdk.Stack {
@@ -30,6 +32,8 @@ export class WebStack extends cdk.Stack {
         IDENTITY_POOL_ID: cognito.identityPoolIdOutputIdTransfer,
         USER_POOL_ID: cognito.userPoolIdOutputTransfer,
         USER_POOL_WEB_CLIENT_ID: cognito.userPoolClientIdOutputTransfer,
+        QUICKSIGHT_ACCOUNT_ID: props.quicksightAccountId,
+        QUICKSIGHT_DASHBOARD: props.quicksightDashboard,
       },
     });
 

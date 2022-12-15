@@ -9,25 +9,27 @@ const AmplifyConfig = {
   // Existing Auth
   Auth: {
     // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-    identityPoolId: import.meta.env.REACT_APP_IDENTITY_POOL_ID,
+    identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID,
 
     // REQUIRED - Amazon Cognito Region
-    region: import.meta.env.REACT_APP_REGION, // Replace with the region you deployed CDK with
+    region: process.env.REACT_APP_REGION, // Replace with the region you deployed CDK with
 
     // OPTIONAL - Amazon Cognito Federated Identity Pool Region
     // Required only if it's different from Amazon Cognito Region
-    identityPoolRegion: import.meta.env.REACT_APP_REGION,
+    identityPoolRegion: process.env.REACT_APP_REGION,
 
     // REQUIRED - Amazon Cognito User Pool ID
-    userPoolId: import.meta.env.REACT_APP_USER_POOL_ID, // Replace with your User Pool ID
+    userPoolId: process.env.REACT_APP_USER_POOL_ID, // Replace with your User Pool ID
 
     // REQUIRED - Amazon Cognito Web Client ID (26-char alphanumeric string)
-    userPoolWebClientId: import.meta.env.REACT_APP_USER_POOL_WEB_CLIENT_ID, // Replace with your User Pool Web Client ID
+    userPoolWebClientId: process.env.REACT_APP_USER_POOL_WEB_CLIENT_ID, // Replace with your User Pool Web Client ID
 
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
-    mandatorySignIn: false,
+    mandatorySignIn: true,
 
-    // Amplify Iot Integration
+    // Amplify Quicksight Integration
+    quicksightAccountId: process.env.REACT_APP_QUICKSIGHT_ACCOUNT_ID,
+    quicksightDashboards: process.env.REACT_APP_TEST_KITCHEN_DASHBOARD_ID,
   },
 };
 

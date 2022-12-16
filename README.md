@@ -9,9 +9,46 @@ This is a PoC Web Application for Corkally. It contains:
 
 ### Set cdk context parameters
 
+Visit [`cdk.context.json`](cdk.context.json) and update the following values:
+
+```jsonc
+{
+  "adminEmail": "enter the admin email address here",
+  "projectName": "corkallyWeb -- you can update or change this project name",
+  "deployWebStack": true,
+  "deployQuicksightStack": true,
+  "quicksightAccountId": "enter quicksight account id here",
+  "quicksightDashboard": "enter quicksight dashboard id here"
+}
+```
+
 ### Check prerequisites
 
+For a full summary or prerequisites visit [AWS CDK Prerequisites](https://docs.aws.amazon.com/cdk/v2/guide/work-with.html#work-with-prerequisites). Please note that to use Quicksight Dashboard integration with this architecture you will need to manually create a Quicksight account and set up Quicksight dashboards using the Quicksight console.
+
 Running this application requires `node`, `aws-cli`, and `aws cdk`
+
+#### To set up `node`:
+
+Visit [nodejs](https://nodejs.org/en/) for directions on installing node for your operating system
+
+#### To set up `aws-cli`:
+
+Visit [AWS CLI](https://aws.amazon.com/cli/) to set up the AWS CLI for your environment
+
+#### To set up `aws cdk`:
+
+```sh
+npm install -g aws-cdk
+# if the above command gives you a permissions error
+sudo npm install -g aws-cdk
+```
+
+#### To configure the AWS CLI and assume a role or credentials
+
+```sh
+aws configure
+```
 
 ### Deploy
 

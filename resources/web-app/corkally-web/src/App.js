@@ -14,8 +14,8 @@ import "@aws-amplify/ui-react/styles.css";
 import Analytics from "./scenes/analytics";
 
 // Amplify Configuration
-//import { AmplifyConfig } from "./config/amplify-config";
-//Amplify.configure(AmplifyConfig);
+import { AmplifyConfig } from "./config/amplify-config";
+Amplify.configure(AmplifyConfig);
 
 function App({ signOut, user }) {
   const [theme, colorMode] = useMode();
@@ -56,6 +56,4 @@ function App({ signOut, user }) {
   );
 }
 
-export default App;
-
-//export default withAuthenticator(App);
+export default withAuthenticator(App);

@@ -52,8 +52,7 @@
 - Corkally at footer
 - Change wine bottle to a person
 -
-- Colors
-  -
+- ## Colors
 
 ### Notes
 

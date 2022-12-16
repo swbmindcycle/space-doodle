@@ -80,7 +80,7 @@ export class CognitoAuth extends Construct {
 
     // -- COGNITO USER POOL --
     const userPool = new UserPool(this, "UserPool", {
-      userPoolName: "UserPool",
+      userPoolName: `${this.node.tryGetContext("projectName")}UserPool`,
       signInAliases: {
         email: true,
         username: false,

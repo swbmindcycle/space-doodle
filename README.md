@@ -21,6 +21,23 @@ cdk deploy --all
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
+## What you will build
+
+This application builds the following AWS CDK stacks:
+
+- WebStack
+- SharedResourcesStack
+
+### WebStack
+
+This stack deploys an AWS Amplify application, with a CodeCommit repository that triggers an automatic build and CodePipeline. The Amplify App will be hosted at a dev subdomain. Please note that this domain is ephemeral, so if you destroy the application and rebuild the url will change.
+
+This Stack utilizes the [`AmplifyDeploy` CDK construct](lib/constructs/construct-amplify-deploy/construct-amplify-deploy.ts) and integrates an AWS Cognito User Pool for authorization within the web application. Please note that to add new users you will need to retrieve the [AWS Amplify Domain and URL](https://us-east-2.console.aws.amazon.com/amplify/home?region=us-east-2#/) from the AWS Amplify section of the AWS Console. To add new users please follow the instructions for [creating Cognito user accounts as an administrator](https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-create-user-accounts.html).
+
+### SharedResourcesStack
+
+This stack deploys shared resources that are utilized across all stacks. This will currently include an AWS Cognito User Pool built from the [`CognitoAuth` CDK construct](lib/constructs/construct-cognito-auth/construct-cognito-auth.ts)
+
 ## Useful commands
 
 - `npm run build` compile typescript to js

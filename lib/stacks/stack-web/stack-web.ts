@@ -6,6 +6,7 @@ import { aws_codecommit as codecommit } from "aws-cdk-lib";
 import * as path from "path";
 import { AmplifyDeploy } from "../../constructs/construct-amplify-deploy/construct-amplify-deploy";
 import { CognitoAuth } from "../../constructs/construct-cognito-auth/construct-cognito-auth";
+import { QuicksightEmbed } from "../../constructs/construct-quicksight-embed/construct-quicksight-embed";
 
 interface WebStackProps extends cdk.StackProps {
   adminEmail: string;
@@ -67,6 +68,11 @@ export class WebStack extends cdk.Stack {
         // 👇 attach the Policy Document as inline policies
         CodeArtifactAccess: codeArtifactPolicy,
       },
+    });
+
+    const quicksightEmbed = new QuicksightEmbed(this, "QuicksightEmbed", {
+      quicksightAccountId: props.quicksightAccountId,
+      quicksightDashboardId: props.quicksightDashboard,
     });
 
     new CfnOutput(this, "WebAppRepositoryCloneUrl", {

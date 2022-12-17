@@ -405,7 +405,7 @@ amplifytools.xcconfig
 **.sample
 #amplify-do-not-edit-end
 
-cdk.context.json
+!cdk.context.json
 
 # vs code
 .vscode/

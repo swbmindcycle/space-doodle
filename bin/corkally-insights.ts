@@ -33,7 +33,6 @@ if (webOption === true) {
     env: appEnv,
     adminEmail: app.node.tryGetContext("adminEmail"),
     cognito: cognito,
-    quicksightAccountId: app.node.tryGetContext("quicksightAccountId"),
     quicksightDashboard: app.node.tryGetContext("quicksightDashboard"),
   });
 }

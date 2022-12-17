@@ -1,12 +1,10 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
+
+const quicksightEmbedUrl = `https://us-east-2.quicksight.aws.amazon.com/sn/embed/share/accounts/${
+  process.env.REACT_APP_QUICKSIGHT_ACCOUNT_ID
+}/dashboards/${process.env.REACT_APP_QUICKSIGHT_DASHBOARD_ID}`;
 
 const Analytics = () => {
   const theme = useTheme();
@@ -21,15 +19,9 @@ const Analytics = () => {
         />
       </Box>
       <Box>
-        <img
-          alt="dashboard"
-          width="100%"
-          src={`../../assets/dashboard.png`}
-          style={{ cursor: "pointer" }}
-        />
+        <iframe width="100%" height="1080" src={quicksightEmbedUrl} />
       </Box>
     </Box>
   );
 };
-
 export default Analytics;

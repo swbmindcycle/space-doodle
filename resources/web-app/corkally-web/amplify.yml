@@ -11,7 +11,7 @@ frontend:
         - echo "REACT_APP_USER_POOL_ID=$USER_POOL_ID" >> .env
         - echo "REACT_APP_USER_POOL_WEB_CLIENT_ID=$USER_POOL_WEB_CLIENT_ID" >> .env
         - echo "REACT_APP_QUICKSIGHT_ACCOUNT_ID=$QUICKSIGHT_ACCOUNT_ID" >> .env
-        - echo "REACT_APP_QUICKSIGHT_DASHBOARD_ID=$QUICKSIGHT_DASHBOARD" >> .env
+        - echo "REACT_APP_QUICKSIGHT_DASHBOARD_ID=$QUICKSIGHT_DASHBOARD_ID" >> .env
         - echo "Printing environmental variables to the console to ensure they are correct"
         - cat .env
         - npm run build

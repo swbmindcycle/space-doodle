@@ -26,10 +26,6 @@ const AmplifyConfig = {
 
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
     mandatorySignIn: true,
-
-    // Amplify Quicksight Integration
-    quicksightAccountId: process.env.REACT_APP_QUICKSIGHT_ACCOUNT_ID,
-    quicksightDashboards: process.env.REACT_APP_TEST_KITCHEN_DASHBOARD_ID,
   },
 };
 

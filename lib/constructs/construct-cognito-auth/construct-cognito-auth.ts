@@ -1,4 +1,5 @@
 import * as cdk from "aws-cdk-lib";
+import { aws_iam as iam } from "aws-cdk-lib";
 import * as path from "path";
 import { Construct } from "constructs";
 import {
@@ -29,6 +30,7 @@ import {
   VerificationEmailStyle,
   CfnIdentityPoolRoleAttachment,
   CfnIdentityPool,
+  OAuthScope,
 } from "aws-cdk-lib/aws-cognito";
 import {
   IdentityPool,
@@ -384,6 +386,36 @@ export class CognitoAuth extends Construct {
     this.identityPoolIdOutputIdTransfer = this.IdentityPool.ref;
 
     this.userPoolClientIdOutputTransfer = userPoolClient.userPoolClientId;
+
+    const client = userPool.addClient("AppClient", {
+      oAuth: {
+        flows: {
+          implicitCodeGrant: true,
+        },
+        scopes: [OAuthScope.OPENID, OAuthScope.PROFILE],
+        callbackUrls: ["https://myapp.com/home"],
+        logoutUrls: ["https://myapp.com/home"],
+      },
+    });
+
+    const domain = userPool.addDomain("Domain", {
+      cognitoDomain: {
+        domainPrefix: `qse${Stack.of(this).region}${Stack.of(this).account}`,
+      },
+    });
+
+    // Open ID Provider
+
+    // const openIdProvider = new iam.OpenIdConnectProvider(
+    //   this,
+    //   "CognitoOpenIdConnectProvider",
+    //   {
+    //     url: `https://cognito-idp.${Stack.of(this).region}.amazonaws.com/${
+    //       userPool.userPoolId
+    //     }`,
+    //     clientIds: [userPoolClient.userPoolClientId],
+    //   }
+    // );
 
     // -- Outputs --
     // Set the public variables so other stacks can access the deployed auth/auz related stuff above as well as set as CloudFormation output variables

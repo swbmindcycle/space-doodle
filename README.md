@@ -5,6 +5,10 @@ This is a PoC Web Application for Corkally. It contains:
 - Cognito User Auth Pool
 - Amplify Web Stack
 
+|                        Dashboard Page                        |                        Analytics Page                        |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![Dashboard](./resources/design/corkally_dashboard_page.png) | ![Analytics](./resources/design/corkally_analytics_page.png) |
+
 ## 🚀 How to deploy
 
 ### Set cdk context parameters

@@ -1,8 +1,8 @@
 {
-  "name": "corkally-insights",
+  "name": "appa-insights",
   "version": "0.1.0",
   "bin": {
-    "corkally-insights": "bin/corkally-insights.js"
+    "appa-insights": "bin/appa-insights.js"
   },
   "scripts": {
     "build": "tsc",

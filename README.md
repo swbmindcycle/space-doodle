@@ -1,13 +1,13 @@
-# Welcome to Corkally Web CDK App
+# Welcome to appa Web CDK App
 
-This is a PoC Web Application for Corkally. It contains:
+This is a PoC Web Application for appa. It contains:
 
 - Cognito User Auth Pool
 - Amplify Web Stack
 
-|                        Dashboard Page                        |                        Analytics Page                        |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![Dashboard](./resources/design/corkally_dashboard_page.png) | ![Analytics](./resources/design/corkally_analytics_page.png) |
+|                      Dashboard Page                      |                      Analytics Page                      |
+| :------------------------------------------------------: | :------------------------------------------------------: |
+| ![Dashboard](./resources/design/appa_dashboard_page.png) | ![Analytics](./resources/design/appa_analytics_page.png) |
 
 ## 🚀 How to deploy
 
@@ -18,7 +18,7 @@ Visit [`cdk.context.json`](cdk.context.json) and update the following values:
 ```jsonc
 {
   "adminEmail": "enter the admin email address here",
-  "projectName": "corkallyWeb -- you can update or change this project name",
+  "projectName": "appaWeb -- you can update or change this project name",
   "deployWebStack": true,
   "deployQuicksightStack": true,
   "quicksightAccountId": "enter quicksight account id here",

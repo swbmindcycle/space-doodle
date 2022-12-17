@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <Box m="20px" display>
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to Corkally Analytics" />
+        <Header title="DASHBOARD" subtitle="Welcome to appa Analytics" />
 
         <Box>
           <Button

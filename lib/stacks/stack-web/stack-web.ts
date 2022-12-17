@@ -25,7 +25,7 @@ export class WebStack extends cdk.Stack {
     const cognito = props.cognito;
 
     this.amplifyDeployment = new AmplifyDeploy(this, "AmplifyDeployment", {
-      appPath: path.join(__dirname, "../../../resources/web-app/corkally-web"),
+      appPath: path.join(__dirname, "../../../resources/web-app/appa-web"),
       repoName: this.node.tryGetContext("projectName"),
       region: this.region,
       envVariables: {

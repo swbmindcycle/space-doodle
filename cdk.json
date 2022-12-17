@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/corkally-insights.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/appa-insights.ts",
   "requireApproval": "never",
   "watch": {
     "include": ["**"],

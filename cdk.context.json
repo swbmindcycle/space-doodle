@@ -1,6 +1,6 @@
 {
   "adminEmail": "email@email.com",
-  "projectName": "corkallyWeb",
+  "projectName": "yourAppName",
   "deployWebStack": true,
   "deployQuicksightStack": true,
   "quicksightDashboard": "insert-here"
